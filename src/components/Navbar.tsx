@@ -71,8 +71,8 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-black tracking-tight text-slate-900 dark:text-white sm:text-2xl">
-            Medium<span className="text-slate-400 dark:text-zinc-500">.</span>
+          <span className="text-lg font-black tracking-tight text-slate-900 dark:text-white sm:text-xl">
+            Literature Community
           </span>
         </Link>
 

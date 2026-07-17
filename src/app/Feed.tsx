@@ -91,6 +91,46 @@ export default function Feed({ initialPosts, searchQuery }: FeedProps) {
     <div className="flex flex-col lg:flex-row gap-10 w-full flex-1">
       {/* Main Feed Content */}
       <div className="flex-1 space-y-6">
+        {/* Welcoming Hero Banner */}
+        {!searchQuery && (
+          <div className="mb-6 p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-zinc-950 dark:from-zinc-900 dark:via-zinc-950 dark:to-black text-white relative overflow-hidden shadow-lg border border-slate-200 dark:border-zinc-800/80">
+            <div className="relative z-10 max-w-xl">
+              <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold bg-white/10 text-slate-200 mb-4 backdrop-blur-sm tracking-wider uppercase">
+                Literature Community
+              </span>
+              <h1 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight">
+                Where stories shape ideas and connect readers.
+              </h1>
+              <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Welcome to a professional space built for authors, thinkers, and avid readers. Publish your insights, share literature, and explore publications tailored specifically to your reading interests.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2.5">
+                <Link
+                  href="/new-story"
+                  className="px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-950 hover:bg-slate-100 transition-all shadow"
+                >
+                  Start Writing
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const el = document.getElementById("stories-start");
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="px-4 py-2 rounded-lg text-xs font-bold bg-white/10 hover:bg-white/20 text-white border border-white/10 transition-all"
+                >
+                  Explore Feed
+                </button>
+              </div>
+            </div>
+            {/* Decorative backgrounds */}
+            <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-white/[0.02] blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 right-0 -mr-16 -mb-16 w-48 h-48 rounded-full bg-white/[0.01] blur-2xl pointer-events-none" />
+          </div>
+        )}
+
+        <div id="stories-start" />
+
         {/* Feed Header & Filters */}
         <div className="border-b border-slate-100 dark:border-zinc-800 pb-4">
           <div className="flex flex-wrap items-center justify-between gap-4">
@@ -242,10 +282,10 @@ export default function Feed({ initialPosts, searchQuery }: FeedProps) {
 
         <div className="pt-6 border-t border-slate-100 dark:border-zinc-800/80">
           <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">
-            Stack Profile
+            About Us
           </h3>
           <p className="text-xs text-slate-500 dark:text-zinc-400 leading-relaxed">
-            Built using a secure 100% free stack with Next.js App Router, Prisma, Neon PostgreSQL, NextAuth.js, and Cloudinary.
+            The <strong>Literature Community</strong> is a dedicated publication hub for readers and writers. We aim to protect independent thoughts, foster creative writing, and build a space where literature shapes culture and connects people across fields.
           </p>
         </div>
       </div>

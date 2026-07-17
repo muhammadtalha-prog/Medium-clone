@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Medium Clone",
+  title: "Literature Community",
   description: "A secure, modern, full-stack blogging application.",
 };
 
