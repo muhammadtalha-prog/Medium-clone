@@ -133,12 +133,12 @@ export default function Navbar() {
               >
                 Sign In
               </button>
-              <button
-                onClick={() => signIn()}
+              <Link
+                href="/register"
                 className="rounded-full bg-slate-900 dark:bg-white px-4 py-2 text-xs font-semibold text-white dark:text-zinc-950 hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow focus:outline-none"
               >
                 Get Started
-              </button>
+              </Link>
             </div>
           )}
         </div>
