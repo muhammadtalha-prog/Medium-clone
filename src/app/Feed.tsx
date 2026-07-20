@@ -23,10 +23,27 @@ interface FeedProps {
   searchQuery: string;
 }
 
-const CATEGORIES = ["All", "Technology", "Design", "Writing", "Self Improvement"];
-
 export default function Feed({ initialPosts, searchQuery }: FeedProps) {
   const [activeCategory, setActiveCategory] = useState("All");
+
+  // Dynamically compile unique categories and keywords from posts
+  const categoriesSet = new Set<string>();
+  initialPosts.forEach((post) => {
+    if (post.category) {
+      categoriesSet.add(post.category);
+    }
+    if (post.keywords) {
+      post.keywords.split(",").forEach((kw) => {
+        const trimmed = kw.trim();
+        if (trimmed) {
+          const formatted = trimmed.charAt(0).toUpperCase() + trimmed.slice(1);
+          categoriesSet.add(formatted);
+        }
+      });
+    }
+  });
+
+  const categories = ["All", ...Array.from(categoriesSet)];
 
   // Dynamic keyword categorization fallback
   const getPostCategory = (post: Post) => {
@@ -77,7 +94,20 @@ export default function Feed({ initialPosts, searchQuery }: FeedProps) {
   // Filter posts based on category selection
   const filteredPosts = initialPosts.filter((post) => {
     if (activeCategory === "All") return true;
-    return getPostCategory(post) === activeCategory;
+
+    // 1. Check primary category match
+    if (post.category && post.category.toLowerCase() === activeCategory.toLowerCase()) {
+      return true;
+    }
+
+    // 2. Check keywords match
+    if (post.keywords) {
+      const match = post.keywords.split(",").some((kw) => kw.trim().toLowerCase() === activeCategory.toLowerCase());
+      if (match) return true;
+    }
+
+    // 3. Fallback to auto-category guesser
+    return getPostCategory(post).toLowerCase() === activeCategory.toLowerCase();
   });
 
   const getReadingTime = (text: string) => {
@@ -139,7 +169,7 @@ export default function Feed({ initialPosts, searchQuery }: FeedProps) {
         <div className="border-b border-slate-200 dark:border-zinc-800 pb-4">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-1 overflow-x-auto scrollbar-none py-1">
-              {CATEGORIES.map((category) => (
+              {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
@@ -282,7 +312,7 @@ export default function Feed({ initialPosts, searchQuery }: FeedProps) {
             Select a theme to personalize your homepage feed to match your specific reading interests.
           </p>
           <div className="flex flex-wrap gap-2">
-            {CATEGORIES.slice(1).map((category) => (
+            {categories.slice(1).map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
