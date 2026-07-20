@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useSession, signOut, signIn } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
@@ -127,12 +127,12 @@ export default function Navbar() {
             </>
           ) : (
             <div className="flex items-center gap-3">
-              <button
-                onClick={() => signIn()}
+              <Link
+                href="/login"
                 className="text-sm font-semibold text-slate-600 hover:text-slate-900 dark:text-zinc-400 dark:hover:text-white focus:outline-none"
               >
                 Sign In
-              </button>
+              </Link>
               <Link
                 href="/register"
                 className="rounded-full bg-slate-900 dark:bg-white px-4 py-2 text-xs font-semibold text-white dark:text-zinc-950 hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow focus:outline-none"

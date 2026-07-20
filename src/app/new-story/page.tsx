@@ -7,7 +7,7 @@ export default async function NewStoryPage() {
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    redirect("/api/auth/signin?callbackUrl=/new-story");
+    redirect("/login?callbackUrl=/new-story");
   }
 
   return (
