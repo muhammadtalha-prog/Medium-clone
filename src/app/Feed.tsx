@@ -145,7 +145,7 @@ export default function Feed({ initialPosts, searchQuery }: FeedProps) {
                   onClick={() => setActiveCategory(category)}
                   className={`px-4 py-2 text-sm font-bold rounded-full whitespace-nowrap transition-all focus:outline-none ${
                     activeCategory === category
-                      ? "bg-slate-900 text-white dark:bg-white dark:text-zinc-950 shadow-sm"
+                      ? "bg-red-600 text-white dark:bg-orange-600 dark:text-white shadow-sm"
                       : "text-slate-800 dark:text-zinc-200 hover:bg-slate-100 dark:hover:bg-zinc-900"
                   }`}
                 >
@@ -176,7 +176,7 @@ export default function Feed({ initialPosts, searchQuery }: FeedProps) {
                 <div className="flex-1 space-y-2.5">
                   {/* Author / Date Meta */}
                   <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-full bg-slate-900 text-white dark:bg-white dark:text-zinc-950 flex items-center justify-center text-[9px] font-black">
+                    <div className="w-5 h-5 rounded-full bg-red-600 text-white dark:bg-orange-600 dark:text-white flex items-center justify-center text-[9px] font-black">
                       {post.author.username.slice(0, 2).toUpperCase()}
                     </div>
                     <span className="text-xs font-bold text-slate-900 dark:text-zinc-200">
@@ -193,7 +193,7 @@ export default function Feed({ initialPosts, searchQuery }: FeedProps) {
 
                   {/* Title & Preview */}
                   <Link href={`/post/${post.id}`} className="block group">
-                    <h2 className="text-lg sm:text-xl font-black text-slate-950 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-450 transition-colors leading-snug">
+                    <h2 className="text-lg sm:text-xl font-black text-slate-950 dark:text-orange-500 group-hover:text-red-650 dark:group-hover:text-orange-400 transition-colors leading-snug">
                       {post.title}
                     </h2>
                     <p className="text-sm text-slate-800 dark:text-zinc-200 mt-1 leading-relaxed font-medium">
@@ -264,7 +264,7 @@ export default function Feed({ initialPosts, searchQuery }: FeedProps) {
             </p>
             <Link
               href="/new-story"
-              className="inline-block mt-4 rounded-lg bg-slate-900 dark:bg-white text-xs font-bold text-white dark:text-zinc-950 px-4 py-2 hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow active:scale-95"
+              className="inline-block mt-4 rounded-lg bg-red-600 hover:bg-red-750 dark:bg-orange-600 dark:hover:bg-orange-500 text-xs font-bold text-white px-4 py-2 transition-all shadow active:scale-95"
             >
               Write a Story
             </Link>
@@ -288,7 +288,7 @@ export default function Feed({ initialPosts, searchQuery }: FeedProps) {
                 onClick={() => setActiveCategory(category)}
                 className={`px-3 py-1.5 rounded-lg border text-xs font-bold transition-all focus:outline-none ${
                   activeCategory === category
-                    ? "bg-slate-900 border-slate-900 text-white dark:bg-white dark:border-white dark:text-zinc-950"
+                    ? "bg-red-600 border-red-600 text-white dark:bg-orange-600 dark:border-orange-650 dark:text-white"
                     : "border-slate-300 text-slate-800 dark:border-zinc-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-900"
                 }`}
               >

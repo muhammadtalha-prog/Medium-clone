@@ -32,7 +32,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const readingTime = getReadingTime(post.content);
 
   return (
-    <article className="min-h-screen bg-white text-slate-950 dark:bg-zinc-950 dark:text-slate-50 py-10 px-4 transition-colors">
+    <article className="min-h-screen bg-white text-slate-955 dark:bg-black dark:text-slate-50 py-10 px-4 transition-colors">
       <div className="max-w-2xl mx-auto">
         {/* Back navigation */}
         <Link
@@ -57,14 +57,14 @@ export default async function PostPage({ params }: PostPageProps) {
         </Link>
 
         {/* Title */}
-        <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-950 dark:text-white leading-tight mb-6">
+        <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-950 dark:text-orange-500 leading-tight mb-6">
           {post.title}
         </h1>
 
         {/* Author / Publication Meta details */}
         <div className="flex items-center justify-between border-y border-slate-200 dark:border-zinc-800/80 py-4 mb-8">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-slate-900 text-white dark:bg-white dark:text-zinc-950 flex items-center justify-center text-sm font-black shadow-md">
+            <div className="w-10 h-10 rounded-full bg-red-600 text-white dark:bg-orange-600 dark:text-white flex items-center justify-center text-sm font-black shadow-md">
               {post.author.username.slice(0, 2).toUpperCase()}
             </div>
             <div>

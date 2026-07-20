@@ -149,7 +149,7 @@ export default function NewStoryForm() {
         </label>
         
         {coverImage ? (
-          <div className="relative rounded-xl overflow-hidden border border-slate-200 dark:border-zinc-800 bg-slate-100 dark:bg-zinc-950">
+          <div className="relative rounded-xl overflow-hidden border border-slate-200 dark:border-zinc-800 bg-slate-100 dark:bg-black">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={coverImage}
@@ -166,7 +166,7 @@ export default function NewStoryForm() {
           </div>
         ) : (
           <div className="flex items-center justify-center w-full">
-            <label className="flex flex-col items-center justify-center w-full h-40 border-2 border-slate-300 border-dashed rounded-xl cursor-pointer bg-slate-50 dark:bg-zinc-950/20 hover:bg-slate-100/50 dark:border-zinc-800 dark:hover:bg-zinc-900/20 transition-all">
+            <label className="flex flex-col items-center justify-center w-full h-40 border-2 border-slate-350 border-dashed rounded-xl cursor-pointer bg-slate-50 dark:bg-zinc-900/20 hover:bg-slate-100/50 dark:border-zinc-800 dark:hover:bg-zinc-800/20 transition-all">
               <div className="flex flex-col items-center justify-center pt-5 pb-6">
                 <svg
                   className="w-8 h-8 mb-4 text-slate-600 dark:text-zinc-400"
@@ -290,7 +290,7 @@ export default function NewStoryForm() {
         <button
           type="submit"
           disabled={submitting || uploading}
-          className="px-6 py-2.5 rounded-lg text-sm font-bold bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-slate-100 shadow transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-6 py-2.5 rounded-lg text-sm font-bold bg-red-600 text-white hover:bg-red-755 dark:bg-orange-600 dark:text-white dark:hover:bg-orange-500 shadow transition-all disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
         >
           {submitting ? "Publishing..." : "Publish Story"}
         </button>

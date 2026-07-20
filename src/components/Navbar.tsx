@@ -67,7 +67,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/80 dark:border-zinc-800/80 dark:bg-zinc-950/80 backdrop-blur-md transition-all shadow-sm">
+    <nav className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/80 dark:border-zinc-800/80 dark:bg-black/80 backdrop-blur-md transition-all shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2">

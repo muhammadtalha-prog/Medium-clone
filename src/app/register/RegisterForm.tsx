@@ -72,7 +72,7 @@ export default function RegisterForm() {
 
       <div className="space-y-4">
         <div>
-          <label className="block text-xs font-bold text-slate-700 dark:text-zinc-300 uppercase tracking-wider mb-1.5">
+          <label className="block text-xs font-bold text-slate-850 dark:text-zinc-200 uppercase tracking-wider mb-1.5">
             Username
           </label>
           <input
@@ -81,12 +81,12 @@ export default function RegisterForm() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Choose a username"
-            className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition-all text-sm font-semibold"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-black text-slate-950 dark:text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition-all text-sm font-semibold"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-slate-700 dark:text-zinc-300 uppercase tracking-wider mb-1.5">
+          <label className="block text-xs font-bold text-slate-850 dark:text-zinc-200 uppercase tracking-wider mb-1.5">
             Password
           </label>
           <input
@@ -95,12 +95,12 @@ export default function RegisterForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="At least 6 characters"
-            className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition-all text-sm font-semibold"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-black text-slate-950 dark:text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition-all text-sm font-semibold"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-slate-700 dark:text-zinc-300 uppercase tracking-wider mb-1.5">
+          <label className="block text-xs font-bold text-slate-855 dark:text-zinc-200 uppercase tracking-wider mb-1.5">
             Confirm Password
           </label>
           <input
@@ -109,7 +109,7 @@ export default function RegisterForm() {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="Re-type password"
-            className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition-all text-sm font-semibold"
+            className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-zinc-700 bg-white dark:bg-black text-slate-950 dark:text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white transition-all text-sm font-semibold"
           />
         </div>
       </div>
@@ -118,17 +118,17 @@ export default function RegisterForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-3 rounded-xl text-xs font-bold bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-slate-100 transition-all shadow-md focus:outline-none disabled:opacity-50 tracking-wider uppercase"
+          className="w-full py-3 rounded-xl text-xs font-bold bg-red-600 text-white hover:bg-red-755 dark:bg-orange-600 dark:text-white dark:hover:bg-orange-500 transition-all shadow-md focus:outline-none disabled:opacity-50 tracking-wider uppercase active:scale-95"
         >
           {loading ? "Creating Account..." : "Create Account"}
         </button>
       </div>
 
-      <div className="text-center text-xs text-slate-500 dark:text-zinc-400 pt-2">
+      <div className="text-center text-xs text-slate-700 dark:text-zinc-300 pt-2 font-medium">
         Already have an account?{" "}
         <Link
           href="/login"
-          className="font-bold text-slate-900 dark:text-white hover:underline focus:outline-none"
+          className="font-bold text-slate-950 hover:text-red-600 dark:text-orange-500 dark:hover:text-orange-400 hover:underline focus:outline-none"
         >
           Sign In
         </Link>
