@@ -25,6 +25,8 @@ model Post {
   title       String
   content     String
   cover_image String?
+  category    String   @default("Writing")
+  keywords    String   @default("")
   author_id   String
   author      User     @relation(fields: [author_id], references: [id], onDelete: Cascade)
   created_at  DateTime @default(now())

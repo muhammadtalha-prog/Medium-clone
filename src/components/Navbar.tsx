@@ -31,12 +31,12 @@ function NavbarSearch() {
       className="hidden max-w-xs flex-1 sm:block md:max-w-sm mx-4"
     >
       <div className="relative">
-        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 dark:text-zinc-500">
+        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-600 dark:text-zinc-400">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            strokeWidth="2"
+            strokeWidth="2.5"
             stroke="currentColor"
             className="w-4 h-4"
           >
@@ -52,7 +52,7 @@ function NavbarSearch() {
           placeholder="Search stories..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full rounded-full border border-slate-100 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-900 py-1.5 pl-9 pr-4 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-slate-300 dark:focus:border-zinc-700 focus:outline-none transition-all"
+          className="w-full rounded-full border border-slate-300 dark:border-zinc-700 bg-slate-50 dark:bg-zinc-900 py-1.5 pl-9 pr-4 text-sm text-slate-950 dark:text-white placeholder-slate-500 focus:border-slate-900 dark:focus:border-white focus:outline-none transition-all font-semibold"
         />
       </div>
     </form>
@@ -67,17 +67,17 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-40 w-full border-b border-slate-100 bg-white/80 dark:border-zinc-800/85 dark:bg-zinc-950/80 backdrop-blur-md transition-all">
+    <nav className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/80 dark:border-zinc-800/80 dark:bg-zinc-950/80 backdrop-blur-md transition-all shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-lg font-black tracking-tight text-slate-900 dark:text-white sm:text-xl">
+          <span className="text-lg font-black tracking-tight text-slate-950 dark:text-white sm:text-xl hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
             Literature Community
           </span>
         </Link>
 
         {/* Search Input Bar (Hidden on Mobile, Wrapped in Suspense) */}
-        <Suspense fallback={<div className="hidden max-w-xs flex-1 sm:block md:max-w-sm mx-4 h-9 bg-slate-50 dark:bg-zinc-900 rounded-full animate-pulse" />}>
+        <Suspense fallback={<div className="hidden max-w-xs flex-1 sm:block md:max-w-sm mx-4 h-9 bg-slate-55 dark:bg-zinc-900 rounded-full animate-pulse" />}>
           <NavbarSearch />
         </Suspense>
 
@@ -90,13 +90,13 @@ export default function Navbar() {
               {/* Write Page Link */}
               <Link
                 href="/new-story"
-                className="hidden items-center gap-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900 dark:text-zinc-400 dark:hover:text-white sm:flex"
+                className="hidden items-center gap-1.5 text-sm font-bold text-slate-800 hover:text-slate-950 dark:text-zinc-300 dark:hover:text-white sm:flex transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth="2"
+                  strokeWidth="2.5"
                   stroke="currentColor"
                   className="w-4 h-4"
                 >
@@ -112,14 +112,14 @@ export default function Navbar() {
               {/* Logged In Info & SignOut button */}
               <div className="flex items-center gap-3">
                 <div
-                  className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 dark:bg-white text-xs font-bold text-white dark:text-zinc-950 shadow-sm"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 dark:bg-white text-xs font-black text-white dark:text-zinc-950 shadow-md"
                   title={session.user?.name || ""}
                 >
                   {getInitials(session.user?.name || "")}
                 </div>
                 <button
                   onClick={() => signOut({ callbackUrl: "/" })}
-                  className="rounded-lg border border-slate-200 dark:border-zinc-800 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 dark:text-zinc-300 dark:hover:bg-zinc-800 transition-all focus:outline-none"
+                  className="rounded-lg border border-slate-300 dark:border-zinc-700 px-3 py-1.5 text-xs font-bold text-slate-800 hover:bg-slate-50 dark:text-zinc-200 dark:hover:bg-zinc-800 transition-all focus:outline-none active:scale-95"
                 >
                   Sign Out
                 </button>
@@ -129,13 +129,13 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <Link
                 href="/login"
-                className="text-sm font-semibold text-slate-600 hover:text-slate-900 dark:text-zinc-400 dark:hover:text-white focus:outline-none"
+                className="text-sm font-bold text-slate-800 hover:text-slate-950 dark:text-zinc-300 dark:hover:text-white transition-colors focus:outline-none"
               >
                 Sign In
               </Link>
               <Link
                 href="/register"
-                className="rounded-full bg-slate-900 dark:bg-white px-4 py-2 text-xs font-semibold text-white dark:text-zinc-950 hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow focus:outline-none"
+                className="rounded-full bg-slate-900 dark:bg-white px-4 py-2 text-xs font-bold text-white dark:text-zinc-950 hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-md focus:outline-none active:scale-95"
               >
                 Get Started
               </Link>

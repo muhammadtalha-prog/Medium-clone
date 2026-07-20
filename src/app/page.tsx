@@ -16,6 +16,8 @@ export default async function Home({ searchParams }: PageProps) {
           OR: [
             { title: { contains: search, mode: "insensitive" } },
             { content: { contains: search, mode: "insensitive" } },
+            { category: { contains: search, mode: "insensitive" } },
+            { keywords: { contains: search, mode: "insensitive" } },
           ],
         }
       : undefined,

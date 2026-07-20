@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { title, content, cover_image } = body;
+    const { title, content, cover_image, category, keywords } = body;
 
     // Validate inputs
     if (!title || !content) {
@@ -36,6 +36,8 @@ export async function POST(req: NextRequest) {
         title,
         content,
         cover_image: cover_image || null,
+        category: category || "Writing",
+        keywords: keywords || "",
         author_id: userId,
       },
     });
